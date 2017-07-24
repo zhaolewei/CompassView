@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context="zlw.com.mycompass.CompassActivity">
+
+    <zlw.com.compassuilib.CompassView
+        android:id="@+id/compass_view"
+        android:layout_width="3000dp"
+        android:layout_height="3000dp"
+        android:layout_centerInParent="true" />
+
+
+</RelativeLayout>
