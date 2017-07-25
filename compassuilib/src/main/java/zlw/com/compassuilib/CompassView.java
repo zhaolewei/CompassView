@@ -1,6 +1,7 @@
 package zlw.com.compassuilib;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -40,7 +41,7 @@ public class CompassView extends View {
     private static final float DIVIDE_COUNT = 120; //将圆划分为120等份
     private double lineRateSize = 1 / 22d;
     private int lineColor;
-    private int keyLinecolor;
+    private int keyLineColor;
     private int mainLinecolor;
     private int edgeTextColor;
     private int orientationTextColor;
@@ -67,37 +68,43 @@ public class CompassView extends View {
     public CompassView(Context context) {
         super(context);
         init();
+
     }
 
     public CompassView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+        getAttrs(context, attrs);
         init();
     }
 
     public CompassView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        getAttrs(context, attrs);
         init();
     }
 
+    /**
+     * 得到属性值
+     *
+     * @param context
+     * @param attrs
+     */
+    private void getAttrs(Context context, AttributeSet attrs) {
+        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.CompassView);
+
+        ta.getInt(R.styleable.CompassView_cv_divideCount, 120);
+
+        angleTextColor = ta.getColor(R.styleable.CompassView_cv_angleTextColor, Color.parseColor("#ffffff"));
+        edgeTextColor = ta.getInt(R.styleable.CompassView_cv_edgeTextColor, Color.parseColor("#00ffff"));
+        keyLineColor = ta.getInt(R.styleable.CompassView_cv_keyLineColor, Color.parseColor("#ffffee"));
+        lineColor = ta.getInt(R.styleable.CompassView_cv_lineColor, Color.parseColor("#00cccc"));
+        orientationTextColor = ta.getInt(R.styleable.CompassView_cv_orientationTextColor, Color.parseColor("#00cccc"));
+        mainLinecolor = ta.getInt(R.styleable.CompassView_cv_mainLineColor, Color.parseColor("#ffffee"));
+
+        ta.recycle();
+    }
+
     private void init() {
-        lineColor = Color.parseColor("#00cccc");
-        keyLinecolor = Color.parseColor("#ffffee");
-        mainLinecolor = Color.parseColor("#ffffee");
-        edgeTextColor = Color.parseColor("#00ffff");
-        orientationTextColor = Color.parseColor("#00cccc");
-        angleTextColor = Color.parseColor("#ffffff");
-
-
-//                edgeTextSize = 18;
-//        edgeTextMargin = 30;
-//        orientationTextSize = 20;
-//        oriTextMargin = 35;
-//        angleTextSize = 28;
-//        rowPitch = 26;
-//        mainLineLength = 15;
-
-        //渐进公式
-
 
         mPaint = new Paint();
         mPaint.setColor(lineColor);
@@ -105,7 +112,7 @@ public class CompassView extends View {
         mPaint.setAntiAlias(true);
         mKeyPaint = new Paint();
         mKeyPaint.setStrokeWidth(1);
-        mKeyPaint.setColor(keyLinecolor);
+        mKeyPaint.setColor(keyLineColor);
         mKeyPaint.setAntiAlias(true);
 
         mMainPaint = new Paint();
@@ -192,6 +199,7 @@ public class CompassView extends View {
         initSize();
         init();
     }
+
 
     @Override
     protected void onDraw(Canvas canvas) {

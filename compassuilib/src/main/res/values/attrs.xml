@@ -2,15 +2,15 @@
 <resources>
 
     <declare-styleable name="CompassView">
-        <attr name="lineColor" format="color" />
-        <attr name="keyLineColor" format="color" />
-        <attr name="edgeTextColor" format="color" />
-        <attr name="orientationTextColor" format="color" />
-        <attr name="angleTextColor" format="color" />
+        <attr name="cv_lineColor" format="color" />
+        <attr name="cv_keyLineColor" format="color" />
+        <attr name="cv_mainLineColor" format="color" />
+        <attr name="cv_edgeTextColor" format="color" />
+        <attr name="cv_orientationTextColor" format="color" />
+        <attr name="cv_angleTextColor" format="color" />
 
         <!--线段的数量-->
-        <attr name="divideCount" format="integer" />
-
+        <attr name="cv_divideCount" format="integer" />
 
 
     </declare-styleable>
