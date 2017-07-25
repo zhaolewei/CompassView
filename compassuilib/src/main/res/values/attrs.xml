@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CompassView">
+        <attr name="lineColor" format="color" />
+        <attr name="keyLineColor" format="color" />
+        <attr name="edgeTextColor" format="color" />
+        <attr name="orientationTextColor" format="color" />
+        <attr name="angleTextColor" format="color" />
+
+        <!--线段的数量-->
+        <attr name="divideCount" format="integer" />
+
+
+
+    </declare-styleable>
+
+</resources>

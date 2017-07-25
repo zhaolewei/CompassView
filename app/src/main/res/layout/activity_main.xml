@@ -8,9 +8,8 @@
 
     <zlw.com.compassuilib.CompassView
         android:id="@+id/compass_view"
-        android:layout_width="3000dp"
-        android:layout_height="3000dp"
+        android:layout_width="460dp"
+        android:layout_height="460dp"
         android:layout_centerInParent="true" />
-
 
 </RelativeLayout>
