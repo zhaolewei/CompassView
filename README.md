@@ -36,4 +36,8 @@ allprojects {
 | cv_divideCount | integer |小线条的数量
 
 
+## Use
+````java
+    compassView.setRotate(rotate); //设置顺时针旋转的角度  
 
+````
