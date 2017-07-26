@@ -55,7 +55,7 @@ public class CompassView extends View {
     private int rowPitch;
     private int mainLineLength;
 
-    private boolean isDebug = true;
+    private boolean isDebug;
     private int edgeTextMargin;
 
     //外置接口
@@ -100,6 +100,8 @@ public class CompassView extends View {
         lineColor = ta.getInt(R.styleable.CompassView_cv_lineColor, Color.parseColor("#00cccc"));
         orientationTextColor = ta.getInt(R.styleable.CompassView_cv_orientationTextColor, Color.parseColor("#00cccc"));
         mainLinecolor = ta.getInt(R.styleable.CompassView_cv_mainLineColor, Color.parseColor("#ffffee"));
+
+        isDebug = ta.getBoolean(R.styleable.CompassView_cv_isDebug, false);
 
         ta.recycle();
     }

@@ -11,6 +11,7 @@
 
         <!--线段的数量-->
         <attr name="cv_divideCount" format="integer" />
+        <attr name="cv_isDebug" format="boolean" />
 
 
     </declare-styleable>
